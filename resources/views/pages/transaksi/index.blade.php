@@ -81,7 +81,7 @@
                                                 <td>{{ number_format($item->total_harga) }}</td>
                                                 <td>
                                                     @if ($item->payment_url != null || $item->status == 'GAGAL')
-                                                    <a href="{{ $item->payment_url }}" class="btn btn-sm btn-success">
+                                                    <a href="{{ $item->payment_url }}" target="_blank" class="btn btn-sm btn-success">
                                                         Link
                                                     </a>
 
@@ -89,7 +89,7 @@
                                                 </td>
                                                 <td>
                                                   @if ($item->payment_url == null)
-                                                  <form action="{{ route('siswa.bayar', $item->id) }}" method="post" enctype="multipart/form-data">
+                                                  <form target="_blank" action="{{ route('siswa.bayar', $item->id) }}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     <button type="submit"
                                                         class="btn btn-sm btn-info mr-1" style='float: left;'>Bayar</button>
